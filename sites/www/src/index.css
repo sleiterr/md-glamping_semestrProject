@@ -1,8 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Zen+Loop:ital@0;1&display=swap");
+
 @import "tailwindcss";
-@import "./styles/fonts.css";
+@import "tailwindcss/utilities";
+
 
 @theme {
   --color-body: rgba(206, 211, 205, 1);
+  /* --color-body: #000; */
   --color-primary: #fff;
   --color-secondary: #fff;
 
@@ -14,10 +18,13 @@
   --color-testimonials-bg: rgba(130, 155, 151, 1);
   --color-footer-bg: rgba(42, 79, 87, 1);
   --color-menu-bg: rgba(130, 155, 151, 1);
+
+  --font-nanum: "Nanum Gothic", sans-serif;
+  --font-zen: "Zen Loop", cursive;
 }
 
 :root {
-  --font-gothic: "Nanum Gothic", sans-serif; 
+  --font-gothic: "Nanum Gothic", sans-serif;
 }
 
 html {
