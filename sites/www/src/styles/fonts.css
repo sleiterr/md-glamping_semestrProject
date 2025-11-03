@@ -1,0 +1,41 @@
+/** Nanum Gothic */
+
+@font-face {
+  font-family: "Nanum Gothic";
+  src: url("../assets/fonts/NanumGothic/NanumGothic-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nanum Gothic";
+  src: url("../assets/fonts/NanumGothic/NanumGothic-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nanum Gothic";
+  src: url("../assets/fonts/NanumGothic/NanumGothic-ExtraBold.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/** ZenLoop */
+
+@font-face {
+  font-family: "Zen Loop";
+  src: url("../assets/fonts/ZenLoop/ZenLoop-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zen Loop";
+  src: url("../assets/fonts/ZenLoop/ZenLoop-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: Italic;
+}
