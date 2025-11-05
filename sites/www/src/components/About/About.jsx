@@ -1,7 +1,7 @@
 import React from "react";
 import GiteImg from "../../assets/stays/gitte.jpg";
 import SecondaryButton from "../Button/SecondaryButton";
-import IntroSection from "../IntroSection/IntroSection";
+import IntroSection from "../Section/IntroSection";
 
 const abotText = [
   {
@@ -18,18 +18,16 @@ const abotText = [
 export const About = () => {
   return (
     <IntroSection>
-      <div className="py-16 md:py-32 mx-auto md:max-w-7xl">
-        <div className="w-full px-4 md:px-0">
-          <AboutItem />
-        </div>
-        <div className="flex flex-col items-center mt-12">
-          <img
-            src={GiteImg}
-            alt="Gite"
-            className="w-44 h-44 rounded-full object-cover"
-          />
-          <SecondaryButton to="/stay">se vores ophold</SecondaryButton>
-        </div>
+      <div className="w-full px-4 md:px-0">
+        <AboutItem />
+      </div>
+      <div className="flex flex-col items-center mt-12">
+        <img
+          src={GiteImg}
+          alt="Gite"
+          className="w-44 h-44 rounded-full object-cover"
+        />
+        <SecondaryButton to="/stay">se vores ophold</SecondaryButton>
       </div>
     </IntroSection>
   );
