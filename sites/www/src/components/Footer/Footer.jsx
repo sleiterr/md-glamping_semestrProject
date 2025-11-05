@@ -1,6 +1,7 @@
 import React from "react";
 import { logo } from "../../assets/iconExports/index";
 import MediaFooter from "./MediaFooter";
+import clsx from "clsx";
 
 const footerText = [
   {
@@ -13,7 +14,12 @@ const footerText = [
 
 const Footer = () => {
   return (
-    <div className="bg-footer-bg px-28 py-20">
+    <div
+      className={clsx(
+        "bg-footer-bg md:px-28 md:py-20",
+        "px-12 py-18 md:px-28 md:py-20"
+      )}
+    >
       <MediaFooter />
       <FooterItem />
     </div>

@@ -1,3 +1,5 @@
+//! STAYS REVIEWS
+
 const BASE_URL = "http://localhost:3042/reviews";
 
 export const fetchRevies = async () => {
@@ -5,4 +7,21 @@ export const fetchRevies = async () => {
   if (!res.ok) throw new Error("Error loading revies");
   const data = await res.json();
   return data.data || [];
+};
+
+//! STAYS FETCH
+const STAYS_URL = "http://localhost:3042/stay";
+
+export const fetchStays = async () => {
+  const res = await fetch(STAYS_URL);
+  if (!res.ok) throw new Error("Error loading stays");
+  const data = await res.json();
+  return data.data || [];
+};
+
+export const fetchStaysById = async (id) => {
+  const res = await fetch(`${STAYS_URL}/${id}`);
+  if (!res.ok) throw new Error("Stays not found");
+  const data = await res.json();
+  return data.data || null;
 };
