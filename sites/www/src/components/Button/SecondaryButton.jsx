@@ -2,18 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 
-const HeroBtn = ({ children, to, ...rest }) => {
+const SecondaryButton = ({ children, to, ...rest }) => {
   return (
     <>
       <Link
         to={to}
         {...rest}
         className={clsx(
-          "border-2 border-white bg-transparent py-8 px-32 rounded w-full cursor-pointer mt-14",
-          "font-zen font-normal text-secondary text-5xl uppercase",
+          "bg-button-bg py-4 px-8 rounded cursor-pointer mt-12",
+          "font-zen font-normal text-secondary text-4xl uppercase",
           "rounded-br-[3.125rem] rounded-tl-[3.125rem]",
           "transition duration-300 ease-in-out",
-          "hover:bg-white/20 hover:backdrop-blur-md hover:border-white/50"
+          "hover:bg-button-hover-bg"
         )}
       >
         {children}
@@ -22,4 +22,4 @@ const HeroBtn = ({ children, to, ...rest }) => {
   );
 };
 
-export default HeroBtn;
+export default SecondaryButton;

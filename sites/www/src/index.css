@@ -3,7 +3,6 @@
 @import "tailwindcss";
 @import "tailwindcss/utilities";
 
-
 @theme {
   --color-body: rgba(206, 211, 205, 1);
   /* --color-body: #000; */
@@ -17,7 +16,12 @@
   --color-title-bg: rgba(197, 180, 150, 1);
   --color-testimonials-bg: rgba(130, 155, 151, 1);
   --color-footer-bg: rgba(42, 79, 87, 1);
+  --color-about-bg: rgba(42, 79, 87, 1);
   --color-menu-bg: rgba(130, 155, 151, 1);
+  --color-menu-bg: #829b97;
+  
+  --color-button-bg: rgba(130, 155, 151, 1);
+  --color-button-hover-bg: rgba(104, 124, 121, 1);
 
   --font-nanum: "Nanum Gothic", sans-serif;
   --font-zen: "Zen Loop", cursive;
@@ -30,3 +34,10 @@
 html {
   font-family: var(--font-gothic);
 }
+
+/* 
+Ophold
+Kontakt
+Aktiviteter
+Min liste
+Backoffice */
