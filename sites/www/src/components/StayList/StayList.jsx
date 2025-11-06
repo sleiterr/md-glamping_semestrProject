@@ -27,9 +27,7 @@ const StayList = () => {
   }, []);
 
   if (loading)
-    return (
-      <p className="font-normal text-2xl text-sky-800">Loading reviews...</p>
-    );
+    return <p className="font-normal text-2xl text-sky-800">Loading list...</p>;
 
   if (error)
     return <p className="font-normal text-2xl text-red-500">{error}</p>;
@@ -37,9 +35,9 @@ const StayList = () => {
   return (
     <Section>
       <ul className="flex flex-col gap-62">
-        {stays.map((item) => {
+        {stays.map((item, index) => {
           return (
-            <li key={item._id} className="">
+            <li key={`${item._id}-${index}`} className="">
               <div className="relative flex flex-col items-center">
                 <img
                   src={item.image}
@@ -61,7 +59,7 @@ const StayList = () => {
                   </span>
                 </OverlayHeader>
                 <SecondaryButton
-                  to="/stayview"
+                  to={`/stayview/${item._id}`}
                   className="absolute -bottom-10 md:-bottom-10 px-12 py-4 md:px-16 md:py-4"
                 >
                   Læs mere

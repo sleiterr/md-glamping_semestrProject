@@ -9,7 +9,9 @@ const IntroSection = ({ children }) => {
         "rounded-br-[3rem] rounded-tl-[3rem]"
       )}
     >
-      <div className="py-16 md:py-32 mx-auto md:max-w-7xl">{children}</div>
+      <div className="px-4 py-16 md:py-32 md:px-0 mx-auto md:max-w-7xl">
+        {children}
+      </div>
     </section>
   );
 };

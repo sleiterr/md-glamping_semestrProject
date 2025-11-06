@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stay" element={<Stay />} />
-          <Route path="/stayview" element={<StayView />} />
+          <Route path="/stayview/:id" element={<StayView />} />
           <Route path="/backoffice" element={<Backoffice />} />
         </Routes>
       </main>
