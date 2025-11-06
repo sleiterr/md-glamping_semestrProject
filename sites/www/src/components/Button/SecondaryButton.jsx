@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 
-const SecondaryButton = ({ children, to, ...rest }) => {
+const SecondaryButton = ({ children, to, className, ...rest }) => {
   return (
     <>
       <Link
@@ -13,7 +13,8 @@ const SecondaryButton = ({ children, to, ...rest }) => {
           "font-zen font-normal text-secondary text-4xl uppercase",
           "rounded-br-[3.125rem] rounded-tl-[3.125rem]",
           "transition duration-300 ease-in-out",
-          "hover:bg-button-hover-bg"
+          "hover:bg-button-hover-bg",
+          className
         )}
       >
         {children}
