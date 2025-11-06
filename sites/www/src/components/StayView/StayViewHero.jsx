@@ -1,21 +1,21 @@
 import React from "react";
-import StaysBg from "../../assets/bgTitle/image_01.jpg";
+import StayView from "../../assets/bgTitle/image_02.jpg";
 
 const heroText = [
   {
     id: 1,
-    title: "Vores ophold",
+    title: "Weekendtur",
     titleClass: "font-zen text-primary text-8xl",
   },
 ];
 
-const Accommodations = () => {
+const StayViewHero = () => {
   return (
     <section
       className="relative w-full min-w-[320px] h-screen lg:h-auto bg-cover bg-no-repeat bg-center md:aspect-8/5"
       id="stays"
       style={{
-        backgroundImage: `url(${StaysBg})`,
+        backgroundImage: `url(${StayView})`,
         backgroundPosition: "center center",
         // aspectRatio: "8 / 5",
       }}
@@ -28,7 +28,7 @@ const Accommodations = () => {
   );
 };
 
-export default Accommodations;
+export default StayViewHero;
 
 const AccommodationsItem = () => {
   return (

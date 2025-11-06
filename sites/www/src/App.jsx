@@ -7,6 +7,7 @@ import {
 import Home from "./pages/Home/Home";
 import Backoffice from "./pages/Backoffice/Backoffice";
 import Stay from "./pages/Stay/Stay";
+import StayView from "./pages/StayView/StayView";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
@@ -18,8 +19,9 @@ function App() {
       <main className="bg-body">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/backoffice" element={<Backoffice />} />
           <Route path="/stay" element={<Stay />} />
+          <Route path="/stayview" element={<StayView />} />
+          <Route path="/backoffice" element={<Backoffice />} />
         </Routes>
       </main>
       <Footer />

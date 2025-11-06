@@ -10,7 +10,7 @@ export const fetchRevies = async () => {
 };
 
 //! STAYS FETCH
-const STAYS_URL = "http://localhost:3042/stay";
+const STAYS_URL = "http://localhost:3042/stays";
 
 export const fetchStays = async () => {
   const res = await fetch(STAYS_URL);
