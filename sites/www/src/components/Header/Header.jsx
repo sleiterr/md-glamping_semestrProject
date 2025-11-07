@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { logo } from "../../assets/iconExports/index";
 
 // import { Link } from "react-scroll";
 import clsx from "clsx";
@@ -60,35 +61,29 @@ const Header = () => {
 
   return (
     <>
-      <header className={clsx("inset-x-0 top-0 w-full transition-all z-[999]")}>
+      <header
+        className={clsx(
+          "fixed top-0 left-0 w-full z-999",
+          "flex justify-between items-center",
+          "px-8 py-6",
+          "bg-transparent"
+        )}
+      >
         {/* Overlay */}
         <div
           className={clsx(
-            "fixed inset-0 backdrop-blur-sm bg-white/10  transition-opacity duration-300 h-full w-full z-[666]",
+            "fixed inset-0 backdrop-blur-sm bg-white/10  transition-opacity duration-300 h-full w-full z-666",
             menuOpen ? "opacity-300" : "opacity-0 pointer-events-none"
           )}
           onClick={() => setMenuOpen(false)}
         ></div>
-        {/* <nav style={{ borderColor: "rgba(255, 255, 255, 0.2)" }}>
-          <div className="relative py-[0.5rem] md:py-[1rem] shrink-0 cursor-pointer">
-            <Link to="/" smooth={true} duration={800}>
-              {!scrolled ? (
-                <img src={whiteLogo} alt="logo" className="w-[8rem] h-auto" />
-              ) : (
-                <img src={blackLogo} alt="logo" className="w-[8rem] h-auto" />
-              )}
+        {!isHome && (
+          <div className="relative py-2 md:py-4 shrink-0 cursor-pointer">
+            <Link to="/">
+              <img src={logo} alt="logo" className="w-14 h-14" />
             </Link>
-
-            <span
-              className="absolute top-[15%] right-[-22px] h-[70%] w-[1px]"
-              style={{
-                backgroundColor: scrolled
-                  ? "rgba(62, 62, 62,0.60)"
-                  : "rgba(255, 255, 255,0.2)",
-              }}
-            ></span>
           </div>
-        </nav> */}
+        )}
         <div
           className={clsx(
             "fixed top-0 bottom-0 right-0 z-999",
@@ -204,14 +199,14 @@ const Header = () => {
             </ul>
           </nav>
         </div>
+        <div className="fixed z-[1000] right-6 top-5 md:top-8 bg-menu-bg px-4 py-4 rounded-br-3xl rounded-tl-3xl">
+          <BurgerMenu
+            scrolled={scrolled}
+            isOpen={menuOpen}
+            toggleMenu={() => setMenuOpen((prev) => !prev)}
+          />
+        </div>
       </header>
-      <div className="fixed z-[1000] right-6 top-5 md:top-8 bg-menu-bg px-4 py-4 rounded-br-3xl rounded-tl-3xl">
-        <BurgerMenu
-          scrolled={scrolled}
-          isOpen={menuOpen}
-          toggleMenu={() => setMenuOpen((prev) => !prev)}
-        />
-      </div>
     </>
   );
 };
