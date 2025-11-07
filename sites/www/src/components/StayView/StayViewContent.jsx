@@ -6,7 +6,7 @@ const StayViewContent = ({ title, description, includes, price }) => {
   return (
     <section
       className={clsx(
-        "flex items-center justify-center bg-about-bg h-screen",
+        "flex items-center justify-center bg-about-bg",
         "rounded-tl-[3rem]"
       )}
     >
