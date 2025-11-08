@@ -10,7 +10,7 @@ const SecondaryButton = ({ children, to, className, ...rest }) => {
         {...rest}
         className={clsx(
           "bg-button-bg py-4 px-8 rounded cursor-pointer mt-12",
-          "font-zen font-normal text-secondary text-4xl uppercase",
+          "font-zen font-normal text-secondary text-4xl",
           "rounded-br-[3.125rem] rounded-tl-[3.125rem]",
           "transition duration-300 ease-in-out",
           "hover:bg-button-hover-bg",

@@ -29,7 +29,7 @@ const Hero = () => {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="flex flex-col items-center justify-center">
           <HeroItem />
-          <Button to="/backoffice">book nu</Button>
+          <Button to="/contact-form">book nu</Button>
         </div>
       </div>
     </section>
@@ -40,7 +40,7 @@ export default Hero;
 
 const HeroItem = () => {
   return (
-    <div className="">
+    <div>
       {heroText.map((item) => (
         <div
           key={item.id}
