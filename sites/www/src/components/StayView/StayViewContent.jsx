@@ -6,8 +6,9 @@ const StayViewContent = ({ title, description, includes, price }) => {
   return (
     <section
       className={clsx(
-        "flex items-center justify-center bg-about-bg",
-        "rounded-tl-[3rem]"
+        "relative z-10 -mt-12 flex items-center justify-center bg-about-bg",
+        "rounded-tl-[3rem]",
+        "min-h-[calc(100vh-3rem)]"
       )}
     >
       <div className="px-4 py-16 mx-auto md:max-w-7xl">
@@ -33,7 +34,10 @@ const StayViewContent = ({ title, description, includes, price }) => {
           <p className="font-zen font-thin text-primary text-5xl text-center">
             Pris {price},-
           </p>
-          <SecondaryButton className="normal-case! py-11 px-20 md:py-6 md:px-22">
+          <SecondaryButton
+            to="/contact-form"
+            className="normal-case! py-11 px-20 md:py-6 md:px-22"
+          >
             Book nu
           </SecondaryButton>
         </div>

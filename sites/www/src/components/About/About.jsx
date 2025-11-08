@@ -27,7 +27,9 @@ export const About = () => {
           alt="Gite"
           className="w-44 h-44 rounded-full object-cover"
         />
-        <SecondaryButton to="/stay">se vores ophold</SecondaryButton>
+        <SecondaryButton to="/stay" className="uppercase">
+          se vores ophold
+        </SecondaryButton>
       </div>
     </IntroSection>
   );

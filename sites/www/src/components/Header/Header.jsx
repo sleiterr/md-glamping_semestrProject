@@ -65,7 +65,7 @@ const Header = () => {
         className={clsx(
           "fixed top-0 left-0 w-full z-999",
           "flex justify-between items-center",
-          "px-8 py-6",
+          "px-6",
           "bg-transparent"
         )}
       >
@@ -134,7 +134,7 @@ const Header = () => {
               </li>
               <li className="hidden md:block">
                 <Link
-                  to="#"
+                  to="/contact-form"
                   smooth={true.toString()}
                   duration={800}
                   offset={-100}
@@ -199,7 +199,7 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-        <div className="fixed z-[1000] right-6 top-5 md:top-8 bg-menu-bg px-4 py-4 rounded-br-3xl rounded-tl-3xl">
+        <div className="fixed z-[1000] right-6 top-2 md:top-4 bg-menu-bg px-4 py-4 rounded-br-3xl rounded-tl-3xl">
           <BurgerMenu
             scrolled={scrolled}
             isOpen={menuOpen}
