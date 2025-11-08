@@ -1,20 +1,18 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { toast } from "react-toastify";
-// import { useNavigate } from "react-router-dom";
+// import { toast } from "react-toastify";
+import clsx from "clsx";
+import { useNavigate } from "react-router-dom";
 
-import SecondaryButton from "../Button/SecondaryButton";
 import Input from "./Input";
 import TextareaField from "./TextareaField";
 
-const API_URL = "https://example.com";
-
-// const API_URL = import.meta.env.VITE_API_BASE_URL;
-// console.log(API_URL);
+const API_URL = import.meta.env.VITE_API_BASE_URL;
+console.log(API_URL);
 
 const ContactForm = () => {
-  //   const [navigate] = useNavigate();
+  const navigate = useNavigate();
   const initialValues = {
     name: "",
     email: "",
@@ -25,16 +23,12 @@ const ContactForm = () => {
   const validationSchema = Yup.object({
     name: Yup.string().required("Navn er påkrævet"),
     email: Yup.string().email("Ugyldig email").required("Email på påkrævet"),
-    subject: Yup.string().required("Skriv venligst din besked"),
+    subject: Yup.string().required("Skriv venligst din emne"),
     message: Yup.string().required("Skriv venligst din besked"),
   });
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      //   const formData = new FormData();
-      //   formData.append("name", values.name);
-      //   formData.append("email", values.email);
-
       const res = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: {
@@ -43,15 +37,16 @@ const ContactForm = () => {
         body: JSON.stringify(values),
       });
 
-      //   const data = await res.json();
+      const data = await res.json();
 
       if (res.ok) {
-        toast.success(`Tak ${values.name}, din besked er sendt!`);
+        // toast.success(`Tak ${values.name}, din besked er sendt!`);
         resetForm();
+        navigate("/contact-confirmation", { state: { name: values.name } });
       } else {
-        toast.error(values.message || "Noget gik galt, prøv igen");
+        console.error(data.message || "Noget gik galt, prøv igen");
+        // toast.error(values.message || "Noget gik galt, prøv igen");
       }
-      //   navigate("/message-send", { state: { name: values.name } });
     } catch (err) {
       console.error(err);
       console.error("Noget gik galt, prøv igen");
@@ -91,13 +86,12 @@ const ContactForm = () => {
               onChange={(e) => setFieldValue("message", e.target.value)}
               rows={6}
             />
-            <SecondaryButton
+            <SendButton
               type="submit"
-              to="/contact-confirmation"
               className="self-center py-6 px-24 text-5xl md:text-4xl md:py-2 md:px-34"
             >
               Indsend
-            </SecondaryButton>
+            </SendButton>
           </div>
         </Form>
       )}
@@ -106,3 +100,24 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+const SendButton = ({ children, className, ...rest }) => {
+  return (
+    <>
+      <button
+        type="submit"
+        {...rest}
+        className={clsx(
+          "bg-button-bg py-4 px-8 rounded cursor-pointer mt-12",
+          "font-zen font-normal text-secondary text-4xl",
+          "rounded-br-[3.125rem] rounded-tl-[3.125rem]",
+          "transition duration-300 ease-in-out",
+          "hover:bg-button-hover-bg",
+          className
+        )}
+      >
+        {children}
+      </button>
+    </>
+  );
+};
