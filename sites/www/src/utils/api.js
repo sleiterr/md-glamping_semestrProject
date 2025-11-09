@@ -7,9 +7,21 @@ const fetchData = async (endpoint) => {
   return data.data || [];
 };
 
+//! fetchStays
 export const fetchStays = () => fetchData("stays");
+
+//! fetchRevies
 export const fetchRevies = () => fetchData("reviews");
+
+//! fetchStaysById
 export const fetchStaysById = (id) => fetchData(`stay/${id}`);
+
+//! fetchActiviti
+export const fetchActiviti = () => fetchData("activities");
+
+//! fetchActivitiById
+export const fetchActivitiById = () => fetchData("activity/${id}");
+
 
 // const BASE_URL = "http://localhost:3042/reviews";
 
