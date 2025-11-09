@@ -6,7 +6,7 @@ const ActivityCard = ({ children, className, ...rest }) => {
     <div
       {...rest}
       className={clsx(
-        "bg-activ-card-bg py-6 px-6 rounded",
+        "bg-activ-card-bg py-6 px-8 rounded",
         "font-zen font-normal text-secondary text-4xl",
         "rounded-br-[3.125rem] rounded-tl-[3.125rem]",
         "w-full max-w-md md:w-md mx-auto",
