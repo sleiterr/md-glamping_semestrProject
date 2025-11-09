@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Section from "../Section/Section";
 import OverlayHeader from "../OverlayHeader/OverlayHeader";
 import ActivityCard from "./ActivityCard";
+import ActivitiAcordion from "./ActivitiAcordion";
 import FavoriteBtn from "./FavoriteBtn";
 
 import { fetchActiviti } from "../../utils/api";
@@ -55,7 +56,7 @@ const ActivitiesList = () => {
 
   return (
     <Section>
-      <ul className="flex flex-col gap-46 md:gap-62">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-22 md:gap-y-32 gap-x-6">
         {activities.map((item, index) => {
           const isFavorite = favoriteIds.includes(String(item._id));
 
@@ -75,7 +76,7 @@ const ActivitiesList = () => {
                     {item.title}
                   </h4>
                 </OverlayHeader>
-                <ActivityCard className="absolute -bottom-12 flex flex-col">
+                <ActivityCard className="relative -top-14 flex flex-col gap-6">
                   <div className="flex flex-row items-start justify-between">
                     <div className="flex flex-col items-start">
                       <p className="font-zen front-normal text-4xl text-secondary text-center">
@@ -90,6 +91,7 @@ const ActivitiesList = () => {
                       onToggle={() => toggleFavorite(item._id)}
                     />
                   </div>
+                  <ActivitiAcordion description={item.description} />
                 </ActivityCard>
               </div>
             </li>
