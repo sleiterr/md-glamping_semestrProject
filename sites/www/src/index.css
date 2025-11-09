@@ -13,11 +13,14 @@
   --color-secondary-overlay: rgba(54, 54, 54, 0.56);
   --color-third-overlay: rgba(54, 54, 54, 0.56);
   --color-fourth-overlay: rgba(77, 77, 77, 0.65);
+  --color-icon-overlay: rgba(255, 255, 255, 0.18);
+  --color-hover-icon: rgba(255, 255, 255, 0.3);
   --color-glamping-link: rgba(130, 155, 151, 1);
   --color-title-bg: rgba(197, 180, 150, 1);
   --color-testimonials-bg: rgba(130, 155, 151, 1);
   --color-footer-bg: rgba(42, 79, 87, 1);
   --color-about-bg: rgba(42, 79, 87, 1);
+  --color-activ-card-bg: rgba(51, 98, 108, 1);
   --color-menu-bg: rgba(130, 155, 151, 1);
   --color-menu-bg: #829b97;
 

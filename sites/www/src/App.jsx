@@ -10,14 +10,19 @@ import Home from "./pages/Home/Home";
 import Stay from "./pages/Stay/Stay";
 import StayView from "./pages/StayView/StayView";
 import ContactForm from "./pages/ContactForm/ContactForm";
+import Activities from "./pages/Activities/Activities";
 import ContactConfirmation from "./components/FormContact/ContactConfirmation";
+
+import LoginPage from "./pages/LoginPage/LoginPage";
 import Footer from "./components/Footer/Footer";
-import Backoffice from "./pages/Backoffice/Backoffice";
+
 import "./App.css";
 
 function App() {
   const location = useLocation();
-  const hideLayout = location.pathname === "/contact-confirmation";
+  const hideLayout = ["/contact-confirmation", "/login-page"].includes(
+    location.pathname
+  );
 
   return (
     <>
@@ -28,11 +33,12 @@ function App() {
           <Route path="/stay" element={<Stay />} />
           <Route path="/stayview/:id" element={<StayView />} />
           <Route path="/contact-form" element={<ContactForm />} />
+          <Route path="/login-page" element={<LoginPage />} />
+          <Route path="/activities" element={<Activities />} />
           <Route
             path="/contact-confirmation"
             element={<ContactConfirmation />}
           />
-          <Route path="/backoffice" element={<Backoffice />} />
         </Routes>
       </main>
       {!hideLayout && <Footer />}

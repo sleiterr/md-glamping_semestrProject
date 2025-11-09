@@ -150,7 +150,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  to="#"
+                  to="/activities"
                   smooth={true.toString()}
                   duration={800}
                   offset={-100}
@@ -182,7 +182,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  to="/backoffice"
+                  to="/login-page"
                   smooth={true.toString()}
                   duration={800}
                   offset={-100}
@@ -193,13 +193,13 @@ const Header = () => {
                   )}
                   onClick={handleLinkClick}
                 >
-                  Backoffice
+                  Login
                 </Link>
               </li>
             </ul>
           </nav>
         </div>
-        <div className="fixed z-[1000] right-6 top-2 md:top-4 bg-menu-bg px-4 py-4 rounded-br-3xl rounded-tl-3xl">
+        <div className="fixed z-1000 right-6 top-2 md:top-4 bg-menu-bg px-4 py-4 rounded-br-3xl rounded-tl-3xl">
           <BurgerMenu
             scrolled={scrolled}
             isOpen={menuOpen}
