@@ -166,7 +166,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  to="#"
+                  to="/my-list"
                   smooth={true.toString()}
                   duration={800}
                   offset={-100}

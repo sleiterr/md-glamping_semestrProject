@@ -11,6 +11,7 @@ import Stay from "./pages/Stay/Stay";
 import StayView from "./pages/StayView/StayView";
 import ContactForm from "./pages/ContactForm/ContactForm";
 import Activities from "./pages/Activities/Activities";
+import MyList from "./pages/MyList/MyList";
 import ContactConfirmation from "./components/FormContact/ContactConfirmation";
 
 import LoginPage from "./pages/LoginPage/LoginPage";
@@ -35,6 +36,7 @@ function App() {
           <Route path="/contact-form" element={<ContactForm />} />
           <Route path="/login-page" element={<LoginPage />} />
           <Route path="/activities" element={<Activities />} />
+          <Route path="/my-list" element={<MyList />} />
           <Route
             path="/contact-confirmation"
             element={<ContactConfirmation />}

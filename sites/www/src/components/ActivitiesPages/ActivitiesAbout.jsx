@@ -15,7 +15,7 @@ const activText = [
 
 const ActivitiesAbout = () => {
   return (
-    <IntroSection className="h-[31rem] md:h-160">
+    <IntroSection className="h-124 md:h-160">
       <div className="w-full px-4 md:px-0">
         <ActiveItem />
       </div>
