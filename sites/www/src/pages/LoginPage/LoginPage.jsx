@@ -1,10 +1,12 @@
 import React from "react";
 import PageLogin from "../../components/Login/PageLogin";
 
-const LoginPage = () => {
-    return (
-        <PageLogin />
-    );
+const LoginPage = ({ onLogin }) => {
+  return (
+    <>
+      <PageLogin onLogin={onLogin} />
+    </>
+  );
 };
 
 export default LoginPage;

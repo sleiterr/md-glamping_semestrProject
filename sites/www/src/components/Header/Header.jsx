@@ -6,12 +6,13 @@ import { logo } from "../../assets/iconExports/index";
 import clsx from "clsx";
 import BurgerMenu from "./Burger";
 
-const Header = () => {
+const Header = ({ token, onLogout }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const isLoggedIn = Boolean(token);
 
   const handleLinkClick = () => setMenuOpen(false);
 
@@ -79,7 +80,12 @@ const Header = () => {
         ></div>
         {!isHome && (
           <div className="relative py-2 md:py-4 shrink-0 cursor-pointer">
-            <Link to="/">
+            <Link
+              to="/"
+              onClick={() => {
+                onLogout();
+              }}
+            >
               <img src={logo} alt="logo" className="w-14 h-14" />
             </Link>
           </div>
@@ -164,38 +170,57 @@ const Header = () => {
                   Aktiviteter
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/my-list"
-                  smooth={true.toString()}
-                  duration={800}
-                  offset={-100}
-                  className={clsx(
-                    "relative cursor-pointer ",
-                    "font-zen font-light text-secondary text-4xl tracking-wide",
-                    "hover:font-bold transition-all duration-300"
-                  )}
-                  onClick={handleLinkClick}
-                >
-                  Min liste
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/login-page"
-                  smooth={true.toString()}
-                  duration={800}
-                  offset={-100}
-                  className={clsx(
-                    "relative cursor-pointer ",
-                    "font-zen font-light text-secondary text-4xl tracking-wide",
-                    "hover:font-bold transition-all duration-300"
-                  )}
-                  onClick={handleLinkClick}
-                >
-                  Login
-                </Link>
-              </li>
+              {isLoggedIn ? (
+                <>
+                  <li>
+                    <Link
+                      to="/my-list"
+                      smooth={true.toString()}
+                      duration={800}
+                      offset={-100}
+                      className={clsx(
+                        "relative cursor-pointer ",
+                        "font-zen font-light text-secondary text-4xl tracking-wide",
+                        "hover:font-bold transition-all duration-300"
+                      )}
+                      onClick={handleLinkClick}
+                    >
+                      Min liste
+                    </Link>
+                  </li>
+                  <li>
+                    <button
+                      className={clsx(
+                        "relative cursor-pointer ",
+                        "font-zen font-light text-secondary text-4xl tracking-wide",
+                        "hover:font-bold transition-all duration-300"
+                      )}
+                      onClick={() => {
+                        onLogout();
+                      }}
+                    >
+                      Log ud
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <Link
+                    to="/login-page"
+                    smooth={true.toString()}
+                    duration={800}
+                    offset={-100}
+                    className={clsx(
+                      "relative cursor-pointer ",
+                      "font-zen font-light text-secondary text-4xl tracking-wide",
+                      "hover:font-bold transition-all duration-300"
+                    )}
+                    onClick={handleLinkClick}
+                  >
+                    Login
+                  </Link>
+                </li>
+              )}
             </ul>
           </nav>
         </div>
