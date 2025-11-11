@@ -22,6 +22,8 @@ export const fetchActiviti = () => fetchData("activities");
 //! fetchActivitiById
 export const fetchActivitiById = () => fetchData("activity/${id}");
 
+//! fetchActiviti
+export const fetchUsers = () => fetchData("users");
 
 // const BASE_URL = "http://localhost:3042/reviews";
 
