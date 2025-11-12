@@ -1,17 +1,15 @@
 import * as dotenv from "dotenv";
-dotenv.config({ path: `.env.local`, override: true })
+dotenv.config({ path: `.env.local`, override: true });
 
-import server from './lib/server.js';
+import server from "./lib/server.js";
 
-const application = {}
+const application = {};
 
 // Vi initialiserer vores applikation.
 application.init = () => {
-
-    // Vi kalder run metoden på vores server module.
-    server.run();
-
-}
+  // Vi kalder run metoden på vores server module.
+  server.run();
+};
 
 // console.log(process.env)
 
