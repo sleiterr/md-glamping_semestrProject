@@ -20,7 +20,7 @@ export const fetchStaysById = (id) => fetchData(`stay/${id}`);
 export const fetchActiviti = () => fetchData("activities");
 
 //! fetchActivitiById
-export const fetchActivitiById = () => fetchData("activity/${id}");
+export const fetchActivitiById = (id) => fetchData(`activity/${id}`);
 
 //! fetchActiviti
 export const fetchUsers = () => fetchData("users");
