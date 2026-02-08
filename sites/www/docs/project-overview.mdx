@@ -1,0 +1,108 @@
+# Project Overview
+
+## 📱 Project Name
+**Gittes Glamping** - Luxury Glamping Booking & Management Platform
+
+## 🎯 Project Goals
+
+1. Provide a seamless booking experience for luxury glamping accommodations
+2. Enable administrators to manage content and bookings efficiently
+3. Showcase activities and experiences to potential guests
+4. Build a secure, scalable web application with modern technologies
+5. Create a responsive, user-friendly interface for all devices
+
+## ✨ Key Features
+
+### For Guests
+- **Browse Accommodations**: View detailed information about available stays
+- **Explore Activities**: Discover and book various glamping activities
+- **Favorites System**: Save preferred accommodations and activities
+- **User Authentication**: Secure login with JWT tokens
+- **Contact Support**: Reach out through integrated contact forms
+- **Responsive Design**: Perfect experience on mobile, tablet, and desktop
+
+### For Administrators
+- **Protected Dashboard**: Secure admin panel with role-based access
+- **Content Management**: Add, edit, and delete accommodations, activities, and reviews
+- **Booking Management**: View and manage guest bookings and inquiries
+- **User Management**: Manage user accounts and roles
+- **Analytics Ready**: Track bookings and activities
+
+## 🏗️ Architecture Overview
+
+```
+┌─────────────────────────────────────────┐
+│  Frontend (React 18 + Vite)             │
+│  - Pages & Components                   │
+│  - Tailwind CSS Styling                 │
+│  - Form Validation (Formik/Yup)         │
+│  - localStorage for State               │
+└────────────┬────────────────────────────┘
+             │ RESTful API
+             ↓
+┌─────────────────────────────────────────┐
+│  Backend (Express.js)                   │
+│  - RESTful Routes                       │
+│  - JWT Authentication                   │
+│  - Database Operations                  │
+│  - File Uploads (Multer)                │
+└────────────┬────────────────────────────┘
+             │ Mongoose
+             ↓
+┌─────────────────────────────────────────┐
+│  MongoDB Atlas                          │
+│  - Users Collection                     │
+│  - Accommodations (Stays)               │
+│  - Activities                           │
+│  - Reviews & Testimonials               │
+│  - Contacts & Messages                  │
+└─────────────────────────────────────────┘
+```
+
+## 🔐 Security Features
+
+- **JWT Authentication**: Secure token-based authentication
+- **Password Hashing**: Bcrypt for secure password storage
+- **Environment Variables**: Sensitive data stored in `.env.local`
+- **Protected Routes**: Admin dashboard requires authentication
+- **CORS Configuration**: API access control
+
+## 📊 Data Models
+
+### User
+- Email, Name, Picture
+- Hashed Password
+- Role (admin/guest)
+- Creation Date
+
+### Accommodation (Stay)
+- Title, Description
+- Price, Number of Persons
+- Includes (amenities)
+- Featured Image
+
+### Activity
+- Title, Description
+- Date & Time
+- Featured Image
+
+### Review/Testimonial
+- Guest Name & Age
+- Review Content
+- Associated Stay
+
+### Contact Message
+- Name, Email, Subject
+- Message Content
+- Submission Date
+
+## 🌐 Deployment
+
+- **Frontend**: Deployed on Vercel
+- **Backend**: Deployed on DigitalOcean
+- **Database**: MongoDB Atlas (Cloud)
+- **CI/CD**: Git-based deployment
+
+---
+
+**Status**: ✅ Production Ready | **Version**: 1.0.0

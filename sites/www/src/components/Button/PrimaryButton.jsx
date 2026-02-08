@@ -13,7 +13,8 @@ const PrimaryButton = ({ children, to, ...rest }) => {
           "font-zen font-normal text-secondary text-5xl uppercase",
           "rounded-br-[3.125rem] rounded-tl-[3.125rem]",
           "transition duration-300 ease-in-out",
-          "hover:bg-white/20 hover:backdrop-blur-md hover:border-white/50"
+          "hover:bg-white/20 hover:backdrop-blur-md hover:border-white/50",
+    
         )}
       >
         {children}

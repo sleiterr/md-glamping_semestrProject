@@ -1,0 +1,44 @@
+{
+  "name": "Gittes Glamping Documentation",
+  "description": "Full-stack luxury glamping booking platform documentation",
+  "logoDark": "/logo/glamping-logo.png",
+  "favicon": "/fav/favicon.ico",
+  "theme": {
+    "colors": {
+      "primary": "#8B7355",
+      "accent": "#D4A574"
+    }
+  },
+  "sidebar": [
+    {
+      "group": "Documentation",
+      "pages": [
+        {
+          "title": "Home",
+          "href": "/",
+          "icon": "home"
+        },
+        {
+          "title": "Project Overview",
+          "href": "/project-overview",
+          "icon": "info"
+        },
+        {
+          "title": "Project Structure",
+          "href": "/project-structure",
+          "icon": "folder"
+        },
+        {
+          "title": "Components Guide",
+          "href": "/components",
+          "icon": "layers"
+        },
+        {
+          "title": "Getting Started",
+          "href": "/next-steps",
+          "icon": "rocket"
+        }
+      ]
+    }
+  ]
+}
