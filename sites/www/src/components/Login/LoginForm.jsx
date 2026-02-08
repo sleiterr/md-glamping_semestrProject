@@ -32,17 +32,20 @@ export const LoginForm = ({ onLogin }) => {
         const data = await res.json();
         console.log("Server response:", data);
 
-        if (res.ok) {
-          toast.success("Login was successful");
-          onLogin(data.data.token);
+        const token = data?.data?.token;
+        const isTokenValid = typeof token === "string" && token.length > 0;
 
-          const user = jwtDecode(data.data.token);
+        if (res.ok && data?.status === "ok" && isTokenValid) {
+          toast.success("Login was successful");
+          onLogin(token);
+
+          const user = jwtDecode(token);
 
           if (user.role === "admin") navigate("/backoffice");
           else if (user.role === "guest") navigate("/my-list");
           else navigate("/profile");
         } else {
-          toast.error(data.message || "invalid login");
+          toast.error(data?.message || "invalid login");
         }
       } catch (err) {
         console.error(err);
