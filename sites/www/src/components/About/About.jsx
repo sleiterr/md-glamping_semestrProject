@@ -14,8 +14,7 @@ const abotText = [
       "font-normal text-primary text-base text-center w-full md:max-w-[56rem] sm:max-w-[32rem]",
   },
 ];
-
-export const About = () => {
+ const About = () => {
   return (
     <IntroSection>
       <div className="w-full px-4 md:px-0">

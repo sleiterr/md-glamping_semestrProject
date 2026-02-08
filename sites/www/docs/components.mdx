@@ -1,0 +1,246 @@
+# Components Guide
+
+This document describes the key React components used throughout the Gittes Glamping frontend.
+
+## 📐 Component Architecture
+
+Components are organized by functionality:
+- **Layout Components**: Header, Footer, OverlayHeader
+- **Page Components**: Home, LoginPage, Backoffice, etc.
+- **UI Components**: Button, Input, Form elements
+- **Feature Components**: StayList, ActivitiesList, Login, ProtectedRoute
+
+## 🔐 Authentication Components
+
+### LoginForm
+**Location**: `src/components/Login/LoginForm.jsx`
+
+Handles user login with email and password validation.
+
+**Features**:
+- Formik form with Yup validation
+- Email and password validation
+- JWT token handling via `jwtDecode`
+- Role-based navigation (admin → /backoffice, guest → /my-list)
+- Error toast notifications
+
+**Usage**:
+```jsx
+<LoginForm onLogin={handleLogin} />
+```
+
+### ProtectedRoute
+**Location**: `src/components/ProtectedRoute/ProtectedRoute.jsx`
+
+Guards routes that require authentication and specific roles.
+
+**Features**:
+- Checks for valid JWT token in localStorage
+- Validates token expiration
+- Role-based access control (admin/guest)
+- Redirects to login if unauthorized
+
+**Usage**:
+```jsx
+<Route
+  path="/my-list"
+  element={
+    <ProtectedRoute allowedRoles={["admin", "guest"]}>
+      <MyList />
+    </ProtectedRoute>
+  }
+/>
+```
+
+## 🎨 UI Components
+
+### Button Components
+**Location**: `src/components/Button/`
+
+Reusable button styles throughout the application.
+
+**PrimaryButton**: Main action button
+**SecondaryButton**: Alternative action button
+**LoginButton**: Specialized login form button
+
+### Input
+**Location**: `src/components/Login/Input.jsx`
+
+Form input with validation error display.
+
+**Props**:
+- `type`: Input type (email, password, text)
+- `name`: Input name
+- `placeholder`: Placeholder text
+- `value`: Current value
+- `onChange`: Change handler
+- `error`: Error message
+
+## 📋 Layout Components
+
+### Header
+**Location**: `src/components/Header/Header.jsx`
+
+Main navigation header with responsive menu.
+
+**Features**:
+- Logo and branding
+- Navigation links
+- User login/logout button
+- Mobile burger menu
+- Token-aware rendering
+
+**Props**:
+- `token`: JWT token (for showing user state)
+- `onLogout`: Logout handler
+
+### Footer
+**Location**: `src/components/Footer/Footer.jsx`
+
+Application footer with links and information.
+
+**Features**:
+- Contact information
+- Social media links
+- Quick navigation
+- Responsive layout
+
+### OverlayHeader
+**Location**: `src/components/OverlayHeader/OverlayHeader.jsx`
+
+Full-screen overlay navigation for mobile.
+
+## 🏠 Page Components
+
+### Home
+**Location**: `src/pages/Home/Home.jsx`
+
+Landing page with hero section and featured content.
+
+**Sections**:
+- Hero banner
+- Glamping introduction
+- Featured accommodations
+- Activities showcase
+- Testimonials
+- Call-to-action
+
+### LoginPage
+**Location**: `src/pages/LoginPage/LoginPage.jsx`
+
+Full-page login interface.
+
+**Features**:
+- Login form
+- Error handling
+- Redirect after authentication
+
+### MyList
+**Location**: `src/pages/MyList/MyList.jsx`
+
+User's favorites/wishlist page.
+
+**Features**:
+- Display saved accommodations
+- Remove from favorites
+- Filter and search
+- localStorage persistence
+
+### Backoffice
+**Location**: `src/pages/Backoffice/Backoffice.jsx`
+
+Admin dashboard (protected route).
+
+**Features**:
+- Content management interface
+- Booking management
+- User administration
+
+### Activities
+**Location**: `src/pages/Activities/Activities.jsx`
+
+Activities listing and details page.
+
+**Components**:
+- ActivitiesHome
+- ActivitiesAbout
+- ActivitiesList
+- ActivitieAcordion
+
+### Accommodations (Stay)
+**Location**: `src/pages/Stay/Stay.jsx`
+
+List all available accommodations.
+
+**Features**:
+- Filtering and sorting
+- Add to favorites
+- View details
+
+## 🎯 Feature Components
+
+### StayList
+**Location**: `src/components/StayList/StayList.jsx`
+
+Displays a grid of accommodation cards.
+
+**Features**:
+- Responsive grid layout
+- Card hover effects
+- Favorite button integration
+- Link to detail page
+
+### ActivitiesList
+**Location**: `src/components/ActivitiesPages/ActivitiesList.jsx`
+
+Displays available activities.
+
+**Features**:
+- Activity cards with images
+- Time and date information
+- Favorite system
+- Activity details modal/page
+
+### FormContact
+**Location**: `src/components/FormContact/Form.jsx`
+
+Contact form for guest inquiries.
+
+**Features**:
+- Name, email, subject, message fields
+- Form validation
+- Submission handling
+- Success/error feedback
+
+## 🔄 State Management
+
+### App-level State
+**Location**: `src/App.jsx`
+
+Uses `useLocalStorage` from `@uidotdev/usehooks` for:
+- **token**: JWT authentication token
+- **favorites**: User's favorite accommodations
+
+### Component State
+- Form state managed with **Formik**
+- Component state with **useState**
+- Side effects with **useEffect**
+
+## 📱 Responsive Design
+
+All components use:
+- **Tailwind CSS** for responsive utilities
+- Mobile-first design approach
+- Breakpoints: sm, md, lg, xl
+- Flexible layouts with flexbox/grid
+
+## 🎨 Styling Approach
+
+- **Tailwind CSS**: Primary styling utility
+- **Styled Components**: For dynamic/complex styling
+- **Custom CSS**: In component style files (when needed)
+- **CSS Modules**: Optional for component-scoped styles
+
+---
+
+**Last Updated**: February 2026 | **React Version**: 18.x

@@ -1,0 +1,140 @@
+# Project Structure
+
+## 📂 Directory Overview
+
+```
+md-glamping_semestrProject/
+├── lib/                              # Backend (Node.js/Express)
+│   ├── server.js                     # Express server configuration
+│   ├── index.js                      # Application entry point
+│   ├── db/                           # Database layer
+│   │   ├── dbConnect.js              # MongoDB connection
+│   │   ├── models/                   # Mongoose schemas
+│   │   │   ├── user.model.mjs
+│   │   │   ├── stay.model.mjs
+│   │   │   ├── activity.model.mjs
+│   │   │   ├── review.model.mjs
+│   │   │   ├── contact.model.js
+│   │   │   └── myList.model.mjs
+│   │   └── mcd/                      # Database utilities
+│   │       ├── mcd.js
+│   │       ├── seed/                 # Database seeding
+│   │       └── misc/                 # Helpers & utilities
+│   ├── handlers/                     # Business logic
+│   │   ├── auth.handler.js           # Authentication logic
+│   │   ├── stay.handler.js
+│   │   ├── activity.handler.js
+│   │   ├── review.handler.js
+│   │   ├── contact.handler.js
+│   │   ├── user.handler.js
+│   │   └── file.handler.js
+│   ├── routes/                       # API routes
+│   │   ├── auth/                     # Authentication endpoints
+│   │   ├── stays/                    # Accommodation endpoints
+│   │   ├── activities/               # Activity endpoints
+│   │   ├── reviews/                  # Review endpoints
+│   │   ├── contacts/                 # Contact endpoints
+│   │   ├── users/                    # User management
+│   │   └── myList/                   # Favorites endpoints
+│   └── middleware/                   # Express middleware
+│       └── auth.middleware.js        # JWT verification
+│
+├── sites/www/                        # Frontend (React + Vite)
+│   ├── src/
+│   │   ├── App.jsx                   # Main App component
+│   │   ├── main.jsx                  # React entry point
+│   │   ├── pages/                    # Page components
+│   │   │   ├── Home/
+│   │   │   ├── LoginPage/
+│   │   │   ├── Accommodations/
+│   │   │   ├── Activities/
+│   │   │   ├── MyList/
+│   │   │   ├── Backoffice/
+│   │   │   ├── ContactForm/
+│   │   │   └── StayView/
+│   │   ├── components/               # Reusable components
+│   │   │   ├── Header/
+│   │   │   ├── Footer/
+│   │   │   ├── Button/
+│   │   │   ├── Login/                # Authentication components
+│   │   │   ├── FormContact/          # Contact form
+│   │   │   ├── StayList/
+│   │   │   ├── ActivitiesPages/
+│   │   │   ├── Testimonials/
+│   │   │   └── ProtectedRoute/       # Route guard component
+│   │   ├── utils/
+│   │   │   ├── api.js                # API client setup
+│   │   │   └── helpers.js
+│   │   ├── assets/                   # Images, fonts, icons
+│   │   │   ├── activities/
+│   │   │   ├── stays/
+│   │   │   ├── fonts/
+│   │   │   ├── logo/
+│   │   │   └── icons/
+│   │   └── styles/                   # Global styles
+│   ├── .env.local                    # Frontend environment variables
+│   ├── vite.config.js                # Vite configuration
+│   ├── tailwind.config.js            # Tailwind CSS config
+│   └── package.json
+│
+├── public/                           # Static assets
+│   ├── activities/
+│   ├── stays/
+│   ├── reviews/
+│   └── users/
+│
+├── assignment/                       # Project requirements (PDF)
+├── postman/                          # Postman API collection
+├── .env.local                        # Backend environment variables
+├── package.json                      # Backend dependencies
+└── README.md                         # Project documentation
+```
+
+## 🔑 Key Directories Explained
+
+### `/lib` - Backend API
+- **Entry Point**: `index.js` loads environment and starts server
+- **Server Config**: `server.js` defines Express app and routes
+- **Database**: MongoDB schemas and seed data in `/db`
+- **Handlers**: Business logic separated from routes
+- **Routes**: RESTful API endpoints organized by resource
+
+### `/sites/www/src` - Frontend Application
+- **Pages**: Each route has a dedicated page component
+- **Components**: Reusable UI components (Header, Button, Forms, etc.)
+- **Utils**: Helper functions and API configuration
+- **Assets**: Images, fonts, and icons used throughout app
+
+## 🚀 Key Files
+
+| File | Purpose |
+|------|---------|
+| `index.js` | Backend entry point, loads `.env.local` |
+| `lib/server.js` | Express server configuration and route registration |
+| `sites/www/src/App.jsx` | Main React component with routing |
+| `sites/www/src/pages/LoginPage/LoginPage.jsx` | Authentication page |
+| `sites/www/src/components/ProtectedRoute/ProtectedRoute.jsx` | Route guard for admin access |
+| `lib/db/models/*.mjs` | Database schemas |
+| `lib/routes/auth/auth.js` | Authentication API endpoints |
+| `.env.local` | Backend configuration (both root and frontend) |
+
+## 📦 Dependencies
+
+### Backend (package.json @ root)
+- express, body-parser, cors
+- mongoose (MongoDB)
+- jsonwebtoken, bcryptjs (Security)
+- multer (File uploads)
+- dotenv (Environment)
+
+### Frontend (package.json @ sites/www)
+- react, react-router-dom
+- vite (Build tool)
+- tailwindcss (Styling)
+- formik, yup (Form validation)
+- react-toastify (Notifications)
+- jwt-decode (Token parsing)
+
+---
+
+**Last Updated**: February 2026

@@ -16,15 +16,15 @@ const Header = ({ token, onLogout }) => {
 
   const handleLinkClick = () => setMenuOpen(false);
 
-  const isProjectDetail = location.pathname
-    .toLowerCase()
-    .startsWith("/project-detail");
-  console.log(
-    "isProjectDetail",
-    isProjectDetail,
-    "pathname:",
-    location.pathname
-  );
+  // const isProjectDetail = location.pathname
+  //   .toLowerCase()
+  //   .startsWith("/project-detail");
+  // console.log(
+  //   "isProjectDetail",
+  //   isProjectDetail,
+  //   "pathname:",
+  //   location.pathname
+  // );
 
   useEffect(() => {
     if (location.pathname !== "/") {

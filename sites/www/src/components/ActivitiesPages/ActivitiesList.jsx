@@ -48,7 +48,7 @@ const ActivitiesList = () => {
     setFavoriteIds((prev) =>
       prev.includes(stringId)
         ? prev.filter((fid) => fid !== stringId)
-        : [...prev, stringId]
+        : [...prev, stringId],
     );
   };
 
@@ -97,7 +97,7 @@ const ActivitiesList = () => {
                       onToggle={() => {
                         if (!isLoggedIn) {
                           toast.info(
-                            "Du skal logge ind for at tilføje til favorit"
+                            "Du skal logge ind for at tilføje til favorit",
                           );
                           return;
                         }
